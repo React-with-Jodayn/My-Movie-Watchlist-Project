@@ -2,3 +2,6 @@
 .bg-darkColor {
   background-color: #1b1b1b;
 }
+.home-height {
+  height: calc(100vh - 351px);
+}
