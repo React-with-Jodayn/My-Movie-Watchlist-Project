@@ -1,19 +1,35 @@
 import "./App.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import Empty from "./Empty";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
+import About from "./About";
+import Genres from "./Genres";
+import Watchlist from "./Watchlist";
 
 function App() {
   return (
     <>
-      <Header />
-      <div className="my-4"></div>
-      <Footer />
       <Routes>
-        <Route path="/" element={<></>} />
-        <Route path="/empty" element={<Empty />} />
-        <Route path="*" element={<p className="bg-red-700">Error 404</p>} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Watchlist" element={<Watchlist />} />
+          <Route path="Genres" element={<Genres />} />
+          <Route path="About" element={<About />} />
+        </Route>
+        <Route
+          path="*"
+          element={
+            <div className="h-screen flex items-center justify-center bg-darkColor ">
+              <h1 className="text-4xl font-bold text-red-700">Error 404</h1>
+              <Link to="/">
+                <h3 className="text-white hover:text-teal-400 block px-3">
+                  {" "}
+                  Go back Home
+                </h3>{" "}
+              </Link>
+            </div>
+          }
+        />
       </Routes>
     </>
   );
