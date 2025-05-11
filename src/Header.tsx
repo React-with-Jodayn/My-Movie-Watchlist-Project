@@ -22,14 +22,9 @@ export default function Header() {
   return (
     <header className=" text-white shadow-md sticky top-0 z-50 bg-darkColor">
       <div className="container mx-auto  py-3 px-1  flex justify-between items-center">
-        <div className="flex items-center space-x-14">
-          {" "}
-          <h1 className="text-2xl font-bold text-orange-500">My Watchlist</h1>
-          <nav className="hidden md:flex space-x-6 text-gray-300">
-            {navLinks}
-          </nav>
-        </div>
-
+        {" "}
+        <h1 className="text-2xl font-bold text-orange-500">My Watchlist</h1>
+        <nav className="hidden md:flex space-x-6 text-gray-300">{navLinks}</nav>
         <div className="hidden md:flex space-x-4">
           <Button className="rounded-xl hover:text-teal-400 border-gray-500">
             Login
@@ -39,7 +34,6 @@ export default function Header() {
             Sign Up
           </Button>
         </div>
-
         <button
           className="md:hidden text-teal-500 text-2xl hover:border-2 focus:border-2 border-teal-500 rounded-md transition p-0.5 cursor-pointer z-55"
           aria-label="Toggle Menu"
