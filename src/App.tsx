@@ -5,7 +5,8 @@ import Home from "./Home";
 import About from "./About";
 import Genres from "./Genres";
 import Watchlist from "./Watchlist";
-
+import Movie from "./Movie";
+import MyMovie from "./MyMovie";
 function App() {
   return (
     <>
@@ -15,6 +16,8 @@ function App() {
           <Route path="Watchlist" element={<Watchlist />} />
           <Route path="Genres" element={<Genres />} />
           <Route path="About" element={<About />} />
+          <Route path="movie/:id" element={<Movie />} />
+          <Route path="mymovie/:textID" element={<MyMovie />} />
         </Route>
         <Route
           path="*"

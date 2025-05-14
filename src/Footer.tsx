@@ -30,11 +30,7 @@ export default function Footer() {
     </li>
   ));
   const icons = useIcons().map((icon, index) => (
-    <a
-      href="#"
-      className={`hover:${icon.color} text-xl transition`}
-      key={index}
-    >
+    <a href="#" className={`text-xl transition ${icon.color} `} key={index}>
       {icon.type}
     </a>
   ));
