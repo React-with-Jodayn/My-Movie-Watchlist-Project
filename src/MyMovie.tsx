@@ -33,7 +33,7 @@ export default function MyMovie() {
   }, [textID]);
   return (
     <div
-      className=" bg-darkColor text-gray-300 text-center sm:text-start flex flex-col sm:flex-row items-center px-4
+      className=" bg-darkColor text-gray-300 text-center sm:text-start flex flex-col sm:flex-row items-start px-4
      justify-between gap-6  py-4"
     >
       {movie.poster_path && (
@@ -60,7 +60,7 @@ export default function MyMovie() {
         </p>
         <p>Rating: {movie.vote_average}</p>
         <div>
-          <h2 className="text-xl font-bold ">Overview :</h2>
+          <h2 className="text-xl font-bold pt-20">Overview :</h2>
           <p>{movie.overview}</p>
         </div>
       </div>
