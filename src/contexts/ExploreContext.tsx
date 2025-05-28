@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 
 type NavLink = {
   name: string;
@@ -7,10 +7,10 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { name: "Home", path: "/" },
-  { name: "Watchlist", path: "Watchlist" },
-  { name: "Genres", path: "Genres" },
-  { name: "About", path: "About" },
+  { name: 'Home', path: '/' },
+  { name: 'Watchlist', path: 'Watchlist' },
+  { name: 'Genres', path: 'Genres' },
+  { name: 'About', path: 'About' },
 ];
 
 const NavLinksContext = createContext<NavLink[]>(navLinks);

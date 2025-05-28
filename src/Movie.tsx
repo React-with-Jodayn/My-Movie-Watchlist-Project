@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
-import axios from "axios";
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 export default function Movie() {
   const { id } = useParams();
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -17,13 +17,13 @@ export default function Movie() {
     vote_average: number;
   };
   const [movie, setMovie] = useState<Movie>({
-    poster_path: "",
-    tagline: "",
-    title: "",
-    release_date: "",
+    poster_path: '',
+    tagline: '',
+    title: '',
+    release_date: '',
     genres: [],
-    runtime: "0h 0m",
-    overview: "",
+    runtime: '0h 0m',
+    overview: '',
     vote_average: 0,
   });
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Movie() {
         });
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       });
   }, [id]);
   return (
@@ -70,8 +70,8 @@ export default function Movie() {
       <div className="w-full sm:w-1/2   pt-10 space-y-2">
         <h1 className="text-3xl font-bold pb-2.5">{movie.title}</h1>
         <p>
-          {movie.release_date} .{" "}
-          {movie.genres.map((genre) => genre.name).join(", ")} . {movie.runtime}
+          {movie.release_date} .{' '}
+          {movie.genres.map((genre) => genre.name).join(', ')} . {movie.runtime}
         </p>
         <p>Rating: {movie.vote_average}</p>
         <div>

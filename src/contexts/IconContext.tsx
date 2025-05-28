@@ -1,11 +1,11 @@
-import { FaTwitter, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { useContext, createContext, type JSX } from "react";
+import { FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { useContext, createContext, type JSX } from 'react';
 
 type icon = { type: JSX.Element; color: string };
 const icons: icon[] = [
-  { type: <FaTwitter />, color: "hover:text-sky-500" },
-  { type: <FaFacebook />, color: "hover:text-blue-600" },
-  { type: <FaLinkedin />, color: "hover:text-blue-700" },
+  { type: <FaTwitter />, color: 'hover:text-sky-500' },
+  { type: <FaFacebook />, color: 'hover:text-blue-600' },
+  { type: <FaLinkedin />, color: 'hover:text-blue-700' },
 ];
 
 const IconContext = createContext<icon[]>(icons);

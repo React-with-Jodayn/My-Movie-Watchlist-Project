@@ -1,4 +1,4 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext } from 'react';
 
 type LearnLink = {
   name: string;
@@ -6,10 +6,10 @@ type LearnLink = {
 };
 
 const learnLinks: LearnLink[] = [
-  { name: "Blog", path: "Blog" },
-  { name: "Ebooks", path: "Ebooks" },
-  { name: "Guides", path: "Guides" },
-  { name: "Templates", path: "Templates" },
+  { name: 'Blog', path: 'Blog' },
+  { name: 'Ebooks', path: 'Ebooks' },
+  { name: 'Guides', path: 'Guides' },
+  { name: 'Templates', path: 'Templates' },
 ];
 const LearnLinksContext = createContext<LearnLink[]>(learnLinks);
 export const useLearnLinks = () => useContext(LearnLinksContext);

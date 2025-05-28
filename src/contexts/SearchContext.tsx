@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react';
 
 const SearchContext = createContext<{
   search: string;
@@ -6,7 +6,7 @@ const SearchContext = createContext<{
 } | null>(null);
 
 export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       {children}
@@ -16,6 +16,6 @@ export const SearchProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const useSearch = () => {
   const context = useContext(SearchContext);
-  if (!context) throw new Error("useSearch must be used inside SearchProvider");
+  if (!context) throw new Error('useSearch must be used inside SearchProvider');
   return context;
 };

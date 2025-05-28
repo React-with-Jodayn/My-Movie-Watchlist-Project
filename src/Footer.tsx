@@ -1,15 +1,15 @@
-import "./App.css";
-import { Link } from "react-router-dom";
-import { useNavLinks } from "./contexts/ExploreContext";
-import { useSolutionLinks } from "./contexts/SolutionContext";
-import { useLearnLinks } from "./contexts/LearnContext";
-import { useIcons } from "./contexts/IconContext";
+import './App.css';
+import { Link } from 'react-router-dom';
+import { useNavLinks } from './contexts/ExploreContext';
+import { useSolutionLinks } from './contexts/SolutionContext';
+import { useLearnLinks } from './contexts/LearnContext';
+import { useIcons } from './contexts/IconContext';
 
 export default function Footer() {
   const navLinks = useNavLinks().map((link, index) => (
     <li key={index}>
       <Link to={link.path} className="hover:text-teal-400 transition">
-        {" "}
+        {' '}
         {link.name}
       </Link>
     </li>

@@ -1,5 +1,5 @@
-import { useNavLinks } from "./contexts/ExploreContext";
-import { Link } from "react-router-dom";
+import { useNavLinks } from './contexts/ExploreContext';
+import { Link } from 'react-router-dom';
 type NavLinkProps = {
   className?: string;
   handleCleck?: () => void;

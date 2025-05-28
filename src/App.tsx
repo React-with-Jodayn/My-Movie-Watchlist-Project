@@ -1,17 +1,17 @@
-import "./App.css";
-import { Link, Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home";
-import About from "./About";
-import Genres from "./Genres";
-import Watchlist from "./Watchlist";
-import Movie from "./Movie";
-import MyMovie from "./MyMovie";
-import { SearchProvider } from "./contexts/SearchContext";
+import './App.css';
+import { Link, Route, Routes } from 'react-router-dom';
+import Layout from './Layout';
+import Home from './Home';
+import About from './About';
+import Genres from './Genres';
+import Watchlist from './Watchlist';
+import Movie from './Movie';
+import MyMovie from './MyMovie';
+import { SearchProvider } from './contexts/SearchContext';
 function App() {
   return (
     <>
-      {" "}
+      {' '}
       <SearchProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -29,9 +29,9 @@ function App() {
                 <h1 className="text-4xl font-bold text-red-700">Error 404</h1>
                 <Link to="/">
                   <h3 className="text-white hover:text-teal-400 block px-3">
-                    {" "}
+                    {' '}
                     Go back Home
-                  </h3>{" "}
+                  </h3>{' '}
                 </Link>
               </div>
             }

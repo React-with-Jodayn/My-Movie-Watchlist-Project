@@ -1,19 +1,19 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-import { type Movie } from "./contexts/MovieContext";
-import ViewMovies from "./ViewMovies";
-import { useSearch } from "./contexts/SearchContext"; //
+import './App.css';
+import { useEffect, useState } from 'react';
+import { type Movie } from './contexts/MovieContext';
+import ViewMovies from './ViewMovies';
+import { useSearch } from './contexts/SearchContext'; //
 
 export default function Watchlist() {
   const [watchlist, setWatchlist] = useState<Movie[]>([]);
   const { search } = useSearch(); //
   useEffect(() => {
-    const savedWatchlist = localStorage.getItem("watchlist");
+    const savedWatchlist = localStorage.getItem('watchlist');
     setWatchlist(savedWatchlist ? JSON.parse(savedWatchlist) : []);
   }, []);
 
   const filteredWatchlist = watchlist.filter((movie) =>
-    movie.title.toLowerCase().includes(search.toLowerCase())
+    movie.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (

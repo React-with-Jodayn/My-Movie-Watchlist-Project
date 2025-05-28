@@ -1,29 +1,29 @@
-import { useState } from "react";
-import "./App.css";
-import Button from "./Button";
-import NavLinks from "./NavLinks";
-import { useFormData } from "./contexts/FormContext";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useSearch } from "./contexts/SearchContext";
+import { useState } from 'react';
+import './App.css';
+import Button from './Button';
+import NavLinks from './NavLinks';
+import { useFormData } from './contexts/FormContext';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useSearch } from './contexts/SearchContext';
 
 const movieSchema = z.object({
   id: z.string().refine(
     (id) => {
-      const saved = localStorage.getItem("movie");
+      const saved = localStorage.getItem('movie');
       const existing = saved ? JSON.parse(saved) : [];
       return !existing.some((m: { id: string }) => m.id === id);
     },
     {
-      message: "ID already exists",
-    }
+      message: 'ID already exists',
+    },
   ),
-  title: z.string().min(1, "Title is required"),
-  genres: z.string().min(1, "Genre is required"),
-  tagline: z.string().min(1, "Tagline is required"),
+  title: z.string().min(1, 'Title is required'),
+  genres: z.string().min(1, 'Genre is required'),
+  tagline: z.string().min(1, 'Tagline is required'),
   release_date: z.string(),
-  runtime: z.coerce.number().min(20, "Time must be at least 20 min"),
+  runtime: z.coerce.number().min(20, 'Time must be at least 20 min'),
   vote_average: z.coerce.number().min(1).max(10),
   overview: z.string().min(10),
   poster_path: z.string(),
@@ -42,15 +42,15 @@ export default function Header() {
   } = useForm({
     resolver: zodResolver(movieSchema),
     defaultValues: {
-      id: "",
-      title: "",
-      genres: "",
-      tagline: "",
-      release_date: "",
+      id: '',
+      title: '',
+      genres: '',
+      tagline: '',
+      release_date: '',
       runtime: 0,
       vote_average: 0,
-      overview: "",
-      poster_path: "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+      overview: '',
+      poster_path: '/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg',
     },
   });
 
@@ -68,7 +68,7 @@ export default function Header() {
           placeholder={section.placeHolder}
           autoFocus={index === 0}
           className={`focus-visible:ring-orange-500 outline-none border border-teal-500 rounded-md bg-gray-200 focus-visible:border-orange-500 transition-all ${
-            section.type === "date" ? "w-48 px-0" : "px-1"
+            section.type === 'date' ? 'w-48 px-0' : 'px-1'
           }`}
           {...register(section.state as keyof z.infer<typeof movieSchema>)}
         />
@@ -82,10 +82,10 @@ export default function Header() {
   ));
 
   const onSubmit = (data: z.infer<typeof movieSchema>) => {
-    const existing = localStorage.getItem("movie");
+    const existing = localStorage.getItem('movie');
     const allMovies = existing ? JSON.parse(existing) : [];
     allMovies.push(data);
-    localStorage.setItem("movie", JSON.stringify(allMovies));
+    localStorage.setItem('movie', JSON.stringify(allMovies));
     setShowModal(false);
     reset();
   };
@@ -123,7 +123,7 @@ export default function Header() {
 
       <div
         className={`fixed top-0 right-0 h-screen min-w-1/5 bg-darkColor text-gray-300 z-50 px-4 py-20 space-y-4 shadow-lg transform duration-300 ease-in-outtransition-transform md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <NavLinks className="block" handleCleck={() => setIsOpen(false)} />
@@ -160,7 +160,7 @@ export default function Header() {
             </label>
             <textarea
               id="overview"
-              {...register("overview")}
+              {...register('overview')}
               className="focus:border-orange-500 outline-none border border-teal-500 rounded-md bg-gray-200 w-full min-h-28"
             />
             {errors.overview && (

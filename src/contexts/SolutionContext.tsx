@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 
 type SolLink = {
   name: string;
@@ -6,10 +6,10 @@ type SolLink = {
 };
 
 const solLinks: SolLink[] = [
-  { name: "Small Bussiness", path: "Small-Bussiness" },
-  { name: "Freelancers", path: "Freelancers" },
-  { name: "Customers", path: "Customers" },
-  { name: "Taxes", path: "Taxes" },
+  { name: 'Small Bussiness', path: 'Small-Bussiness' },
+  { name: 'Freelancers', path: 'Freelancers' },
+  { name: 'Customers', path: 'Customers' },
+  { name: 'Taxes', path: 'Taxes' },
 ];
 
 const SolLinksContext = createContext<SolLink[]>(solLinks);

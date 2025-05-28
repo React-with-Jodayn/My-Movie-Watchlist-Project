@@ -1,6 +1,6 @@
-import type React from "react";
-import { type Movie } from "./contexts/MovieContext";
-import { Link } from "react-router-dom";
+import type React from 'react';
+import { type Movie } from './contexts/MovieContext';
+import { Link } from 'react-router-dom';
 export default function ViewMovies({
   movie,
   children,

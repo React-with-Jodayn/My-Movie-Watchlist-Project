@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
 export default function MyMovie() {
   const { textID } = useParams();
   type Movie = {
@@ -14,20 +14,20 @@ export default function MyMovie() {
     vote_average: number;
   };
   const [movie, setMovie] = useState<Movie>({
-    poster_path: "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
-    tagline: "",
-    title: "",
-    release_date: "",
+    poster_path: '/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg',
+    tagline: '',
+    title: '',
+    release_date: '',
     genres: [],
-    runtime: "0h 0m",
-    overview: "",
+    runtime: '0h 0m',
+    overview: '',
     vote_average: 0,
   });
   useEffect(() => {
-    const savedMovies = localStorage.getItem("movie");
+    const savedMovies = localStorage.getItem('movie');
     const savedMoviesArray = savedMovies ? JSON.parse(savedMovies) : [];
     const movie = savedMoviesArray.find(
-      (item: { id: string }) => item.id === textID
+      (item: { id: string }) => item.id === textID,
     );
     setMovie(movie);
   }, [textID]);
@@ -53,7 +53,7 @@ export default function MyMovie() {
       <div className="w-full sm:w-1/2   pt-10 space-y-2">
         <h1 className="text-3xl font-bold pb-2.5">{movie.title}</h1>
         <p>
-          {movie.release_date} . {movie.genres}.{" "}
+          {movie.release_date} . {movie.genres}.{' '}
           {` ${Math.floor(Number(movie.runtime) / 60)}h ${
             Number(movie.runtime) % 60
           }m`}
