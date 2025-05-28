@@ -1,4 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 .bg-darkColor {
   background-color: #1b1b1b;
+}
+.home-height {
+  min-height: calc(100vh - 60px);
+}
+.screen-height {
+  max-height: calc(100vh - 125px);
+  overflow: hidden;
+}
+
+.centerTheElement {
+  position: absolute;
+  top: 480%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
